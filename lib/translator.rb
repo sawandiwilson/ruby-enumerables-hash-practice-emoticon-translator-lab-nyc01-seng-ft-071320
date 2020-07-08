@@ -15,6 +15,7 @@ def load_library(file_path)
 end
 
 def get_japanese_emoticon(file_path, emoticon)
+  #Write a method, get_japanese_emoticon, that will take a traditional Western emoticon (i.g. :)) and translate it to its Japanese version ((＾ｖ＾)).
   library = load_library(file_path)
   emoticon = library.keys.find do |key|
     library[key][:english] == emoticon
