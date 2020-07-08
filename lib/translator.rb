@@ -1,13 +1,19 @@
 # require modules here
 
-def load_library(yaml_file)
-  #This method should return a hash where each key is the name of an emoticon. 
-  response = {"get_meaning" => {}, "get_japanese_emoticon" => {}}
-  #Each emoticon name should point to a nested hash containing two keys, :english and :japanese. These keys will point to English and Japanese versions of the emoticon. 
-  library = YAML.load_file(yaml_file)
-  library.each do |trans, emos|
-    response["get_meaning"][emos[1]] = trans
-    response["get_emoticon"][emos[0]] = emos[1]
+def load_library(emoticon_file)
+  # code goes here	  emoticons = YAML.load_file('./lib/emoticons.yml')
+
+  emoticon_lib = {'get_meaning'  => {},
+                  'get_emoticon' => {} }
+
+  emoticons.each do |meaning, value|  # meaning= "surprised"   # value= [":o", "o_O"]  <-(e,j)
+    english = value[0]
+    japanese = value[1]
+    emoticon_lib['get_meaning'][japanese] = meaning
+    emoticon_lib['get_emoticon'][english] = japanese
+  end
+  emoticon_lib
+end
 end
 
 def get_japanese_emoticon
