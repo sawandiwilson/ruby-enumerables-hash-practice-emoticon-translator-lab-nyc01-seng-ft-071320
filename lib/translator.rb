@@ -1,6 +1,6 @@
 # require modules here
 
-def load_library(yml)
+def load_library(yml_file)
   # code goes here
   #Write a method, load_library, that loads the emoticons.yml file. 
   .each
