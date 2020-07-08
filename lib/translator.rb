@@ -1,9 +1,7 @@
 # require modules here
 
 def load_library(yml_file)
-  # code goes here
-  #Write a method, load_library, that loads the emoticons.yml file. 
-  .each
+  response = {"get_meaniing" => 
   #This method should return a hash where each key is the name of an emoticon. 
   
   #Each emoticon name should point to a nested hash containing two keys, :english and :japanese. These keys will point to English and Japanese versions of the emoticon. 
